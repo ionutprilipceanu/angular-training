@@ -1,0 +1,46 @@
+<div>
+  <div>Count : {{ count }}</div>
+  <button (click)="increase()">Click</button>
+  <button (click)="decrese()">Click</button>
+</div>
+
+<div>
+  <li *ngFor="let user of userArray">{{ user.name }}</li>
+</div>
+
+<div>
+  <input type="text" (ngModel)="(inputValue)" />
+  <p>Value here :{{ inputValue }}</p>
+</div>
+
+<div>
+  <button (click)="handleToggle()">Click</button>
+
+  <p *ngIf="handleText">Text to be display or hide</p>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="handleInputField" />
+  <p>Value here handleInputField :{{ handleInputField }}</p>
+  <button [disabled]="!handleInputField">Submit</button>
+</div>
+
+<div>
+  <input type="number" [(ngModel)]="firstValue" />
+  <input type="number" [(ngModel)]="secondValue" />
+
+  <button (click)="handleSum()">Sum</button>
+  <p>{{ totalSum }}</p>
+</div>
+
+<div>
+  <!-- {{ myData | json }} -->
+
+  <ul>
+    <li *ngFor="let item of myData$ | async">
+      {{ item.name }}
+      {{ item.username }}
+      {{ item.phone }}
+    </li>
+  </ul>
+</div>
